@@ -1,0 +1,8 @@
+body{
+  /* background-color:#262626; */
+  color:black;
+  /* user-select: none; */
+}
+.divider{
+  border-top-color: rgba(0,0,0,0.5)
+}
