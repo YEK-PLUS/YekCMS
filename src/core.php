@@ -1,21 +1,16 @@
 <?php
 
 define("AUTHOR","YEK|YUNUS EMRE KÖKER");
-define("START","15.05.19");
 define("DIR",__DIR__."/..");
+
 define("DB_CONF",[
-  "host" => "localhost",
-  "name" => "firsatim",
-  "user" => "root",
-  "pass" => ""]);
-define("DOMAIN","http://firsatim.yek");
-define("SITE_NAME","FIRSATIM");
+  "database_type" => "mysql",
+  "database_name" => "db_name",
+  "server" => "localhost",
+  "username" => "root",
+  "password" => ""]);
 
+define("DOMAIN","http://yek.plus");
+define("SITE_NAME","YEK PLUS");
 
-// $default_varibles = [
-  // "destroyedNotification" => 
-// ]
-// if( !isset($_SESSION["defined"]) ){
-// 
-// }
  ?>
