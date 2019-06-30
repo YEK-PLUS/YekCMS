@@ -5,7 +5,7 @@ function printSVG($name){
   }
 }
 function setParams($params,$key){
-  return ( ($params != null) && (gettype($params) == "array") ) && ($params[$key] != null) ? $params : [];
+  return ( ($params != null) && (gettype($params) == "array") ) && ($params[$key] != null) ? $params[$key] : [];
 }
 
  ?>
