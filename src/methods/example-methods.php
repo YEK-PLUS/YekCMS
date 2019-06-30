@@ -1,6 +1,5 @@
 <?php
-$METHODS->addMethod("HelloWord",function(){
+$this->addMethod("HelloWord",function(){
   echo 'Hello Word';
 });
-
 ?>
