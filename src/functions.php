@@ -4,6 +4,8 @@ function printSVG($name){
     echo file_get_contents(DIR."/asset/svg/".$name.".svg");
   }
 }
-
+function setParams($params,$key){
+  return ( ($params != null) && (gettype($params) == "array") ) && ($params[$key] != null) ? $params : null;
+}
 
  ?>
