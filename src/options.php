@@ -11,6 +11,12 @@ $lib["bootstrap"] = [
     "min_path" => "/lib/Bootstrap/js/bootstrap.min.js"
   ]
 ];
+$lib["jquery"] = [
+  "js" => [
+    "path" => "/lib/Jquery/jquery-3.4.1.js",
+    "min_path" => "/lib/Jquery/jquery-3.4.1.min.js"
+  ]
+];
 
 
 ?>
