@@ -2,9 +2,12 @@
 $this->addMethod("css_lib",function(){
   global $MEDOO;
   global $lib;
-  $css_list = $MEDOO->select("settings","*",["name"=>"active-lib"]);
+  $css_list = $MEDOO->select("settings","*",["name"=>"active-lib"])[0];
+  $css_list = explode("|",$css_list["value"]);
   foreach ($css_list as $row) {
-    echo '<link rel="stylesheet" href="'.DOMAIN.$lib[$row["value"]]["css"]["path"].'">';
+    if( isset($lib[ $row ]) && isset( $lib[ $row ]["css"] ) ):
+      echo '<link rel="stylesheet" href="'.DOMAIN.$lib[$row]["css"]["path"].'">';
+    endif;
   }
 });
 $this->addMethod("css_local",function($params = null){

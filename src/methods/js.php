@@ -17,7 +17,6 @@ $this->addMethod("js_local",function($params = null){
   $js_file_list = array_diff($js_file_list,[".",".."]);
   $js_file_list = array_diff($js_file_list,$where);
   foreach ($js_file_list as $row) {
-
     echo '<script src="'.DOMAIN.'/asset/js/'.$row.'"></script>';
   }
 });
