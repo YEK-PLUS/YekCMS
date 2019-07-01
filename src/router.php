@@ -7,8 +7,10 @@
 
 class Router{
   function __construct(){
-    global $DB;
-    $this->db = $DB;
+    global $MEDOO;
+    global $METHODS;
+    $this->medoo = $MEDOO;
+    $this->method = $METHODS;
     $this->setup();
     $this->match();
   }
@@ -18,7 +20,7 @@ class Router{
     $this->r->setBasePath('');
     $this->map = $this->getMap();
 
-    while ($row = $this->map->fetch()) {
+    foreach($this->map as $row) {
       $method = explode(",",($row["method"]));
       $method = implode("|",$method);
 
@@ -43,66 +45,41 @@ class Router{
   }
 
   function getMap(){
-    return $this->db->query("SELECT * from pages");
+    return $this->medoo->select("pages","*");
+  }
+ // TODO: old class update to medoo
+  function LoadErrorPage(){
+    $match = array(
+      "target" => DIR.$this->db->queryFetch("SELECT path FROM pages WHERE name = 404")["path"]
+    );
+    $this->loadPage($match);
+    echo 404;
+  }
+
+  function IncludeErrorPage(){
+    $match = array(
+      "target" => DIR.$this->db->queryFetch("SELECT path FROM pages WHERE name = 404")["path"]
+    );
+    include $match["target"];
+    echo 404;
   }
 
   function match(){
     $match = $this->r->match();
     if($match) {
       $name = $match["name"];
-      $data = $this->db->queryFetch('SELECT * FROM pages WHERE name = "'.$name.'"');
+      $data = $this->medoo->select("pages","*",["name" => $name])[0];
 
       switch ($data["type"]) {
-        case 'page':
-          echo "\n<HTML>";
-
-            echo "\n<HEAD>";
-              include DIR."/src/ex-pages/meta.php";
-              include DIR."/src/ex-pages/css-lib.php";
-              include DIR."/src/ex-pages/css.php";
-            echo "\n</HEAD>";
-
-            echo "\n<BODY>";
-              include DIR."/src/ex-pages/header.php";
-              include $match["target"];
-              include DIR."/src/ex-pages/footer.php";
-              include DIR."/src/ex-pages/js-lib.php";
-            echo "\n</BODY>";
-
-          echo "\n</HTML>";
-          break;
-
-        case 'css':
-        case 'js':
-          require_once $match["target"];
-          break;
         default:
-          // code...
+            include DIR.$data["path"];
           break;
       }
 
       //require $match['target'];
     }
     else {
-      echo "\n<HTML>";
-
-        echo "\n<HEAD>";
-          include DIR."/src/ex-pages/meta.php";
-          include DIR."/src/ex-pages/css-lib.php";
-          include DIR."/src/ex-pages/css.php";
-        echo "\n</HEAD>";
-
-        echo "\n<BODY>";
-          include DIR."/src/ex-pages/header.php";
-
-          require DIR.$this->db->queryFetch("SELECT path FROM pages WHERE name = 404")["path"];
-
-          include DIR."/src/ex-pages/footer.php";
-          include DIR."/src/ex-pages/js-lib.php";
-        echo "\n</BODY>";
-
-      echo "\n</HTML>";
-
+      $this->LoadErrorPage();
     }
   }
 }
