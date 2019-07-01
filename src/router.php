@@ -47,21 +47,10 @@ class Router{
   function getMap(){
     return $this->medoo->select("pages","*");
   }
- // TODO: old class update to medoo
-  function LoadErrorPage(){
-    $match = array(
-      "target" => DIR.$this->db->queryFetch("SELECT path FROM pages WHERE name = 404")["path"]
-    );
-    $this->loadPage($match);
-    echo 404;
-  }
 
-  function IncludeErrorPage(){
-    $match = array(
-      "target" => DIR.$this->db->queryFetch("SELECT path FROM pages WHERE name = 404")["path"]
-    );
-    include $match["target"];
-    echo 404;
+  function LoadErrorPage(){
+    $data = $this->medoo->select("pages","*",["name" => 404])[0];
+    include DIR.$data["path"];
   }
 
   function match(){
@@ -76,7 +65,7 @@ class Router{
           break;
       }
 
-      //require $match['target'];
+
     }
     else {
       $this->LoadErrorPage();
