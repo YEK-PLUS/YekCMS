@@ -1,2 +1,14 @@
 language: php
-php: 7.2
+php: 
+  -7.0
+env:
+  - DB=mysql
+before_script:
+  - if [[ "$DB" == "pgsql" ]]; then psql -c "DROP DATABASE IF EXISTS hello_world_test;" -U postgres; fi
+  - if [[ "$DB" == "pgsql" ]]; then psql -c "create database hello_world_test;" -U postgres; fi
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
+script: phpunit --configuration phpunit_$DB.xml --coverage-text
+notifications:
+  email:
+    - yek.plus.plus@gmail.com
+    - yek@f4med.com
