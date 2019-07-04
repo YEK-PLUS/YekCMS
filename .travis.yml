@@ -8,6 +8,7 @@ before_script:
   - sudo mysql_upgrade -u root --password=password
   - sudo service mysql restart
   - mysql -u root --password=password -e "create database IF NOT EXISTS db_name;"
+script: php -F index.php
 notifications:
   email:
     - yek.plus.plus@gmail.com
