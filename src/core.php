@@ -8,9 +8,9 @@ define("DB_CONF",[
   "database_name" => "db_name",
   "server" => "localhost",
   "username" => "root",
-  "password" => ""]);
+  "password" => "password"]);
 
-define("DOMAIN","http://yek.plus");
+define("DOMAIN","http://localhost:8080");
 define("SITE_NAME","YEK PLUS");
 
  ?>
