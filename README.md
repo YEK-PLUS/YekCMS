@@ -67,7 +67,7 @@ include __DIR__.'/HelloWorld.php';
     </head>
     <body>
         <?php $this->method->HelloWorld(); ?>
-    </bod>
+    </body>
 <?php
 $this->method->js_lib();
 $this->method->js_local();
