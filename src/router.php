@@ -55,6 +55,12 @@ class Router{
 
   function match(){
     $match = $this->r->match();
+    $this->match = $match;
+
+  }
+
+  function loadPage(){
+    $match = $this->match;
     if($match) {
       $name = $match["name"];
       $data = $this->medoo->select("pages","*",["name" => $name])[0];

@@ -11,5 +11,5 @@ $MEDOO = new Medoo(DB_CONF);
 $METHODS = new Methods();
 $ROUTER = new Router();
 
-
+$ROUTER->loadPage();
  ?>
