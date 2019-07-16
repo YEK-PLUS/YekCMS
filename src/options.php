@@ -30,4 +30,10 @@ $lib["materialize"] = [
   ]
 ];
 
+$lib["Font-Awesome"] = [
+  "css" => [
+    "path" => "/lib/Font-Awesome/css/all.css",
+    "min_path" => "/lib/Font-Awesome/css/all.min.css"
+  ]
+];
 ?>
