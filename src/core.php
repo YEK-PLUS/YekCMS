@@ -8,6 +8,7 @@ define("DB_CONF",[
   "database_name" => "db_name",
   "server" => "localhost",
   "username" => "root",
+  'charset' => 'utf8',
   "password" => "password"]);
 
 define("DOMAIN","http://localhost:8080");
