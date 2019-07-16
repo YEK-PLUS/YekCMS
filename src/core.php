@@ -1,6 +1,5 @@
 <?php
 
-define("AUTHOR","YEK|YUNUS EMRE KÖKER");
 define("DIR",__DIR__."/..");
 
 define("DB_CONF",[
