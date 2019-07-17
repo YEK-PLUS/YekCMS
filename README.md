@@ -83,29 +83,38 @@ $this->method->js_local();
 
 
 File Structure
-```bash
-.
-├── LICENSE
-├── README.md
-├── asset
-│   ├── css
-│   │   └── CSS Files Here
-│   ├── js
-│   │   └── JS Files Here
-│   └── svg
-|       └── JS Files Here
+```
+├── themes
+│   └── Example Theme
+│       ├── lib
+│       │   └── theme libs
+│       ├── asset
+│       │   ├── css
+│       │   │   └── theme css files
+│       │   ├── js
+│       │   │   └── theme js files
+│       │   └── svg
+│       │       └── theme svg files
+│       ├── method
+│       │   └── custom methods
+│       └── pages
+│           └── custom pages
 ├── lib
 │   ├── AltoRouter
 │   ├── Bootstrap
 │   ├── Jquery
 │   ├── Medoo
-│   └─ materialize
+│   ├── Tailwind
+│   ├── Font Awesome
+│   └── materialize
 └── src
+    ├── admin
+    │   └── admin cms area
     ├── methods
-    │   └── Methods Files Here
+    │   └── default method files
     ├── pages
-    │   └── Pages Here
-    └── core files here
+    │   └── default Pages 404, home etc..
+    └── default functions page , router etc..
 ```
 
 
