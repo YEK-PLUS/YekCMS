@@ -84,21 +84,16 @@ $this->method->js_local();
 
 File Structure
 ```
-├── themes
-│   └── Example Theme
-│       ├── lib
-│       │   └── theme libs
-│       ├── asset
-│       │   ├── css
-│       │   │   └── theme css files
-│       │   ├── js
-│       │   │   └── theme js files
-│       │   └── svg
-│       │       └── theme svg files
-│       ├── method
-│       │   └── custom methods
-│       └── pages
-│           └── custom pages
+.
+├── LICENSE
+├── README.md
+├── asset
+│   ├── css
+│   │   └── CSS Files Here
+│   ├── js
+│   │   └── JS Files Here
+│   └── svg
+|       └── JS Files Here
 ├── lib
 │   ├── AltoRouter
 │   ├── Bootstrap
@@ -111,10 +106,10 @@ File Structure
     ├── admin
     │   └── admin cms area
     ├── methods
-    │   └── default method files
+    │   └── method files
     ├── pages
-    │   └── default Pages 404, home etc..
-    └── default functions page , router etc..
+    │   └── Pages 404, home etc..
+    └── functions page , router etc..
 ```
 
 
