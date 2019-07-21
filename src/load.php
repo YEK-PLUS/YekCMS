@@ -1,5 +1,4 @@
 <?php
-include __DIR__.'/core.php';
 include __DIR__.'/options.php';
 include __DIR__.'/functions.php';
 include __DIR__.'/router.php';
