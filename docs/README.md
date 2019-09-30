@@ -1,5 +1,5 @@
 # YekCMS | PHP Web Application Framework
-![YekCMS](logo.png)
+![YekCMS](thub.png)
 
 [![Build Status](https://travis-ci.org/YEK-PLUS/YekCMS.png?branch=master)](https://travis-ci.org/YEK-PLUS/YekCMS) [![LICENCE](https://img.shields.io/github/license/YEK-PLUS/YekCMS.svg)](https://github.com/YEK-PLUS/YekCMS/blob/master/LICENSE) [![Downloads](https://img.shields.io/github/downloads/YEK-PLUS/YekCMS/total.svg)](https://github.com/YEK-PLUS/YekCMS/releases)
 
