@@ -5,7 +5,7 @@
 
 
 YekCMS is an open source CMS system for your web applications and has included frontend and backed packages for convenience.
-
+### 31-10-2019 Beta 2.0 release date
 
 |Frontend|Backend|
 |--------|-------|
