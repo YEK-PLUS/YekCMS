@@ -1,8 +1,7 @@
 # YekCMS | PHP Web Application Framework
 ![YekCMS](logo.png)
 
-[![Build Status](https://travis-ci.org/YEK-PLUS/YekCMS.png?branch=master)](https://travis-ci.org/YEK-PLUS/YekCMS) [![LICENCE](https://img.shields.io/github/license/YEK-PLUS/YekCMS.svg)](https://github.com/YEK-PLUS/YekCMS/blob/master/LICENSE) [![Downloads](https://img.shields.io/github/downloads/YEK-PLUS/YekCMS/total.svg)](https://github.com/YEK-PLUS/YekCMS/releases)
-
+[![Build Status](https://travis-ci.org/YEK-PLUS/YekCMS.png?branch=master)](https://travis-ci.org/YEK-PLUS/YekCMS) [![LICENCE](https://img.shields.io/github/license/YEK-PLUS/YekCMS.svg)](https://github.com/YEK-PLUS/YekCMS/blob/master/LICENSE)
 
 YekCMS is an open source CMS system for your web applications and has included frontend and backed packages for convenience.
 ### 31-10-2019 Beta 2.0 release date
