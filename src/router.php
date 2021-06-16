@@ -21,9 +21,8 @@ class Router{
     $this->map = $this->getMap();
 
     foreach($this->map as $row) {
-      $method = explode(",",($row["method"]));
+      $method = explode(",",($row["methods"]));
       $method = implode("|",$method);
-
       $path = DIR.$row["path"];
       $route_ex = '';
       if( !empty($row["extends"])){
@@ -38,36 +37,35 @@ class Router{
       }
 
       $name = $row["name"];
-
       $route = $row["route"].(($route_ex != '')?$route_ex:"");
       $this->r->map( $method , $route , $path , $name );
     }
   }
 
   function getMap(){
-    return $this->medoo->select("pages","*");
+    return $this->medoo->select("router","*");
   }
 
   function LoadErrorPage(){
-    $data = $this->medoo->select("pages","*",["name" => 404])[0];
+    $data = $this->medoo->select("router","*",["name" => 404])[0];
     include DIR.$data["path"];
   }
 
   function match(){
     $match = $this->r->match();
     $this->match = $match;
-
+    return $match;
   }
 
   function loadPage(){
     $match = $this->match;
     if($match) {
       $name = $match["name"];
-      $data = $this->medoo->select("pages","*",["name" => $name])[0];
+      $data = $this->medoo->select("router","*",["name" => $name])[0];
 
       switch ($data["type"]) {
         default:
-            include DIR.$data["path"];
+            include DIR.'/src/pages'.$data["path"];
           break;
       }
 
